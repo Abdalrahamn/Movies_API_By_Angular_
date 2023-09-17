@@ -1,0 +1,15 @@
+<div class="row ">
+
+    <div *ngFor="let movie of trendingPerson" class="col-md-2">
+        <div class="mt-3">
+            <div class="position-relative">
+                <a [routerLink]="['/movieDetails',movie.id , 'person']" class="text-decoration-none">
+                    <img [src]="UrlImage+movie.profile_path" alt="" class="w-100">
+                    <h2 class="fs-4">{{movie.name}}</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</div>

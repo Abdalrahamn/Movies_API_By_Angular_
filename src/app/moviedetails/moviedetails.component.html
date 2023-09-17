@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-4">
+        <img [src]="UrlImage+movieDetailsData.poster_path" alt="" class="w-100">
+        <img *ngIf="movieDetailsData.profile_path" [src]="UrlImage+movieDetailsData.profile_path" alt="" class="w-100">
+    </div>
+
+    <div class="col-md-8 mt-3">
+        <h2 >{{movieDetailsData.original_title}}</h2>
+        <h2 *ngIf="movieDetailsData.name" >{{movieDetailsData.name}}</h2>
+        <p>{{movieDetailsData.overview}}</p>
+        <p *ngIf="movieDetailsData.biography" >{{movieDetailsData.biography| seemore:100}}</p>
+
+        <ul>
+            <li *ngFor="let item of movieDetailsData.genres">{{item.name}}</li>
+        </ul>
+    </div>
+</div>
